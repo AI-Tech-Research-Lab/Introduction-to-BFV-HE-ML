@@ -65,20 +65,25 @@ lenet1_singlesquare = torch.load("../../LeNet1_single_tanh.pt")
 lenet1_singlesquare.eval()
 lenet1_singlesquare.to(device)
 
+n_experiments = 1000
+
 
 # @profile
 def experiment_LeNet1():
-    forward_one_image(lenet1, device)
+	for i in range(0, n_experiments):
+		forward_one_image(lenet1, device)
 
 
 # @profile
 def experiment_LeNet1_singletanh():
-    forward_one_image(lenet1_singletanh, device)
+	for i in range(0, n_experiments):
+		forward_one_image(lenet1_singletanh, device)
 
 
 # @profile
 def experiment_LeNet1_singlesquare():
-    forward_one_image(lenet1_singlesquare, device)
+	for i in range(0, n_experiments):
+		forward_one_image(lenet1_singlesquare, device)
 
 
 if __name__ == '__main__':
@@ -86,14 +91,14 @@ if __name__ == '__main__':
     log.info("Starting experiment...")
     starting_time = time.time()
     experiment_LeNet1()
-    t = time.time() - starting_time
-    log.info(f"The processing of one image for LeNet-1 required {t}")
+    t1 = time.time()
+    log.info(f"The processing of one image for LeNet-1 required {(t1-starting_time)/n_experiments} seconds")
     experiment_LeNet1_singletanh()
-    t = time.time() - t - starting_time
-    log.info(f"The processing of one image for LeNet-1 (single tanh) required {t}")
+    t2 = time.time()
+    log.info(f"The processing of one image for LeNet-1 (single tanh) required {(t2-t1)/n_experiments} seconds")
     experiment_LeNet1_singlesquare()
-    t = time.time() - t - starting_time
-    log.info(f"The processing of one image for approx LeNet-1 (single square) required {t}")
+    t3 = time.time()
+    log.info(f"The processing of one image for approx LeNet-1 (single square) required {(t3-t2)/n_experiments} seconds")
 
 
 

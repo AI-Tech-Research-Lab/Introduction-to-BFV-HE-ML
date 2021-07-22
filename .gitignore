@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/data/
+/HE-ML/data/
+/Experiments/data/
