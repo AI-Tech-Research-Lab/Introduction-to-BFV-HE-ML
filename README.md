@@ -1,3 +1,10 @@
+## WCCI 2022
+The notebooks for the tutorial "Privacy-preserving machine and deep learning with homomorphic encryption: an introduction" can be found in the folder "WCCI2022"!
+The notebook `Tutorial_to_fill.ipynb` is the suggested one. We will complete and run it during the tutorial.
+**You can also run it directly on Google Colab, to avoid compatibility issues at this [link](https://drive.google.com/file/d/1WtvumJvvJuFTjV0pxTiivzTWefi14ui5/view?usp=sharing)!**.
+
+For reference, the `Tutorial_complete.ipynb` notebook already contains the final version of the notebook with a deeped explanation. Also this one can be run on Colab: [link](https://drive.google.com/file/d/1RAA_FD4Emvfzt70D1tRndAvAtOUGRsvV/view?usp=sharing).
+
 # Introduction-to-BFV-HE-ML
 
 This repository contains the code used in the paper "Privacy-preserving deep learning with homomorphic encryption: an introduction".
